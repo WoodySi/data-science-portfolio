@@ -1,80 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Woody Si | Data Science Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            max-width: 1000px;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Woody Si's data science portfolio featuring a World Happiness Report analysis.">
+  <title>Woody Si | Data Science Portfolio</title>
+  <style>
+    :root {
+      --navy: #183153;
+      --blue: #2374ab;
+      --teal: #2a9d8f;
+      --gold: #f4a261;
+      --ink: #263238;
+      --muted: #607d8b;
+      --paper: #ffffff;
+      --background: #f4f7fb;
+      --border: #d9e2ec;
+    }
 
-        h1 {
-            color: #2c3e50;
-        }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-        h2 {
-            color: #34495e;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-        }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--background);
+    }
 
-        img {
-            width: 80%;
-            max-width: 700px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-        }
+    header {
+      color: white;
+      text-align: center;
+      padding: 76px 20px 64px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+    }
 
-        .project {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
+    header h1 { margin: 0 0 10px; font-size: clamp(2.2rem, 6vw, 4rem); }
+    header p { max-width: 720px; margin: 0 auto; font-size: 1.15rem; }
 
-        a {
-            color: #0066cc;
-        }
-    </style>
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 14px 20px;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav a { color: var(--navy); text-decoration: none; font-weight: 700; }
+    nav a:hover { color: var(--teal); }
+
+    main { width: min(1050px, 92%); margin: 38px auto; }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: clamp(24px, 5vw, 42px);
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(24,49,83,.07);
+    }
+
+    h2 { color: var(--navy); margin-top: 0; }
+    h3 { color: var(--blue); margin-top: 30px; }
+    .lead { font-size: 1.08rem; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
+    .skills li { background: #e8f3fa; color: var(--navy); padding: 8px 13px; border-radius: 999px; font-weight: 700; }
+
+    .question {
+      border-left: 5px solid var(--gold);
+      background: #fff8ef;
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-size: 1.08rem;
+    }
+
+    .findings { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .finding { padding: 18px; border-radius: 10px; background: #f7fafc; border-top: 4px solid var(--teal); }
+    .finding strong { display: block; color: var(--navy); margin-bottom: 5px; }
+
+    figure { margin: 28px 0; }
+    figure img { width: 100%; height: auto; display: block; border: 1px solid var(--border); border-radius: 10px; background: #eef3f7; }
+    figcaption { margin-top: 9px; color: var(--muted); font-size: .95rem; }
+
+    .image-note { color: var(--muted); font-size: .92rem; }
+
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 11px 18px;
+      border-radius: 8px;
+      color: white;
+      background: var(--blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .button:hover { background: var(--navy); }
+    .status { display: inline-block; color: #155d27; background: #dff3e4; padding: 6px 11px; border-radius: 999px; font-weight: 700; }
+
+    footer { text-align: center; color: var(--muted); padding: 12px 20px 38px; }
+    code { background: #edf2f7; padding: 2px 5px; border-radius: 4px; }
+  </style>
 </head>
-
 <body>
+  <header>
+    <h1>Si Keng Hin</h1>
+    <p>Data Science Portfolio | Python, statistical analysis and data visualization</p>
+  </header>
 
-<h1>Woody Si</h1>
+  <nav aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#project">Project</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<p>
-Welcome to my Data Science Portfolio. I am interested in data analysis,
-data visualization, and using Python to explore real-world datasets.
-This portfolio showcases projects completed using statistical analysis
-and visualization techniques.
-</p>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="lead">Welcome to my data science portfolio. I use Python, statistical analysis and visualization to investigate real-world questions and communicate findings clearly.</p>
+    </section>
 
-<h2>Technical Skills</h2>
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <ul class="skills">
+        <li>Python</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li>
+        <li>Seaborn</li><li>SciPy</li><li>Data Cleaning</li>
+        <li>Regression Analysis</li><li>Data Visualization</li><li>GitHub</li>
+      </ul>
+    </section>
 
-<ul>
-    <li>Python</li>
-    <li>Pandas</li>
-    <li>NumPy</li>
-    <li>Matplotlib</li>
-    <li>Seaborn</li>
-    <li>Data Visualization</li>
-    <li>Statistical Analysis</li>
-</ul>
+    <section id="project">
+      <h2>World Happiness Report Analysis</h2>
+      <p><span class="status">Completed</span></p>
 
-<div class="project">
+      <h3>Research Question</h3>
+      <p class="question">To what extent does economic wealth, measured by GDP per capita, explain national happiness, and what other factors contribute to well-being?</p>
 
-<h2>Project: World Happiness Report Analysis</h2>
+      <h3>Project Overview</h3>
+      <p>This project investigates whether economic wealth alone can explain differences in national happiness. It compares happiness with GDP per capita and considers social support, freedom, health, generosity and perceptions of corruption.</p>
 
-<h3>Research Question</h3>
+      <h3>Main Findings</h3>
+      <div class="findings">
+        <div class="finding"><strong>Positive relationship</strong>Higher GDP per capita is generally associated with higher happiness scores.</div>
+        <div class="finding"><strong>Wealth is not sufficient</strong>Countries with similar wealth can have substantially different happiness outcomes.</div>
+        <div class="finding"><strong>Notable exceptions</strong>Costa Rica performs similarly to wealthier countries, while Singapore and Hong Kong score lower than their economic strength might predict.</div>
+        <div class="finding"><strong>Happiness is multidimensional</strong>Social support, freedom, health and institutional factors also contribute to well-being.</div>
+      </div>
 
-<p>
-To what extent does economic wealth (GDP per capita) explain national
-happiness, and what other factors contribute to well-being?
-</p>
+      <h3>Visualizations</h3>
+      <p class="image-note">Place the image files listed below in the same folder as <code>index.html</code>. If your filenames differ, update each <code>src</code> value.</p>
 
-<h3>Project Summary</h3>
+      <figure>
+        <img src="Scatter plot with bubble encodings.png" alt="Scatter plot of GDP per capita and happiness score" loading="lazy">
+        <figcaption>GDP per capita and happiness score, including the overall regression trend. Bubble chart using colour for social support and size for freedom to make life choices.</figcaption>
+      </figure>
 
-<p>
-This project analyzes data
+
+      <figure>
+        <img src="Residual analysis.png" alt="Residual analysis of countries performing above economic expectations" loading="lazy">
+        <figcaption>Residual analysis showing countries whose happiness exceeds the level predicted by GDP alone.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="Comparision between the wealthiest countries.png" alt="Comparison of happiness among wealthy countries" loading="lazy">
+        <figcaption>Comparison showing that happiness still varies among countries with high economic prosperity.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="Heat map.png" alt="Heatmap comparing major drivers of happiness" loading="lazy">
+        <figcaption>Standardized heatmap comparing happiness, GDP, social support, health, freedom, generosity and corruption perceptions.</figcaption>
+      </figure>
+
+      <h3>Conclusion</h3>
+      <p>Economic wealth provides an important foundation for happiness, but GDP alone cannot fully explain national well-being. The happiest countries generally perform strongly across several social, health and institutional dimensions.</p>
+
+      <h3>Limitation</h3>
+      <p>The regression simplifies a complex relationship and may hide regional or non-linear patterns. Overlapping observations can also make individual countries difficult to identify, while standardized heatmap values show relative rather than original differences.</p>
+
+      <a class="button" href="https://github.com/WoodySi/data-science-project" target="_blank" rel="noopener noreferrer">View Project Repository</a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>GitHub: <a href="https://github.com/WoodySi" target="_blank" rel="noopener noreferrer">github.com/WoodySi</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Si Keng Hin. Published with GitHub Pages.</p>
+  </footer>
+</body>
+</html>
